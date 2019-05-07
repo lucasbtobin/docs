@@ -164,7 +164,7 @@ CONTAINER ID        IMAGE               COMMAND               CREATED           
 
 From here you can begin to build an ecosystem of containers. You can define how they work together and communicate.
 
-1.  Reopen `docker-compos.yml` and add the `database` service below:
+1.  Reopen `docker-compose.yml` and add the `database` service below:
 
     {{< file "docker-compose.yml" yaml >}}
 version: '3'
@@ -194,6 +194,7 @@ services:
 
 2.  Check the running containers:
 
+        docker-compose up -d
         docker ps
 
      This command shows the status of the containers, the port mapping, the names, and the last command running on them. It's important to note that the postgres container reads "docker-entrypoint..." under commands. The Postgres [Docker Entrypoint](https://github.com/docker-library/postgres/blob/master/docker-entrypoint.sh) script is the last thing that launches when the container starts.
